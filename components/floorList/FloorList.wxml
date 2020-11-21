@@ -1,0 +1,20 @@
+<view class="floorList">
+  <view class="floorTitle">
+    <image mode="widthFix" src="{{floorList.floor_title.image_src}}"></image>
+  </view>
+  <view class="box1">
+    <navigator class="boxItem1">
+      <image class="leftImg" src="{{floorList.product_list[0].image_src}}" alt=""></image>
+    </navigator>
+    <navigator class="boxItem2">
+      <image src="{{floorList.product_list[1].image_src}}"></image>
+      <image src="{{floorList.product_list[2].image_src}}"></image>
+      <image src="{{floorList.product_list[3].image_src}}"></image>
+      <image src="{{floorList.product_list[4].image_src}}"></image>
+    </navigator>
+  </view>
+  <view class="box2">
+    
+  </view>
+
+</view>

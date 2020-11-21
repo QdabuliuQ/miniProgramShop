@@ -1,0 +1,40 @@
+.floorList{
+  width: 100%;
+}
+.floorTitle{
+  width: 100%;
+}
+.floorTitle image{
+  width: 100%;
+}
+.floorList{
+  width: 96%;
+  margin: 0 auto;
+}
+.box1{
+  width: 100%;
+  height: 400rpx;
+  display: flex;
+}
+.boxItem1{
+  flex: 3;
+}
+.boxItem2{
+  flex: 6;
+}
+.boxItem2 image{
+  width: 48%;
+  height: 49%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  float: left;
+  display:block;
+}
+/* .box2{
+  float: left;
+  height: 400rpx;
+} */
+.leftImg{
+  width: 100%;
+  height: 400rpx;
+}

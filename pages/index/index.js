@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+// 网络请求
 import {request} from "../../request/request"
 
 Page({
@@ -11,6 +12,7 @@ Page({
   data: {
     swiperList: [],  // 轮播图数据
     navList: [],  // 导航栏数据
+    floorList: [],  // 楼层数据
   },
 
   /**
@@ -19,6 +21,7 @@ Page({
   onLoad: function (options) {
     this.getSwiperList();
     this.getNavList();
+    this.getFloorList();
   },
 
   // 获取轮播图
@@ -38,6 +41,16 @@ Page({
     }).then(res => {
       this.setData({
         navList: res.data.message
+      })
+    })
+  },
+  // 获取楼层数据
+  getFloorList(){
+    request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
+    }).then(res => {
+      this.setData({
+        floorList: res.data.message
       })
     })
   },

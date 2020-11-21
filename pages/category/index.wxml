@@ -1,2 +1,43 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="cates">
+  <SearchInput></SearchInput>
+  <view class="scrollBox">
+    <!-- 左侧菜单 -->
+    <scroll-view 
+    enhanced="true"
+    scroll-y="true" 
+    show-scrollbar="false"
+    class="leftMenu">
+      <view 
+      bindtap="toggleMenu"
+      data-index="{{index}}"
+      class="menuItem {{index===activeIndex?'activeItem2':''}}" 
+      wx:for="{{leftMenuList}}"   
+      wx:key="key">
+        <view class="text {{index===activeIndex?'activeItem':''}}">{{item}}</view>
+      </view>
+    </scroll-view>
+    <!-- 右侧商品 -->
+    <scroll-view 
+    enhanced="true"
+    show-scrollbar="false"
+    scroll-y="true" 
+    class="rightContent">
+     <view class="catesBox">
+      <view class="catesItem" wx:if="{{titleItem.children}}" wx:for="{{rightContent}}" wx:for-item="titleItem" wx:for-key="key" wx:key="key">
+        <view class="catesTitle">/ {{titleItem.cat_name}} /</view>
+        <view class="catesGoods">
+          <navigator 
+          class="goodsItem"
+          wx:for="{{titleItem.children}}"
+          wx:for-item="goodsItem"
+          wx:for-key="goodsKey"
+          wx:key="goodsKey">
+            <image lazy-load="true" src="{{goodsItem.cat_icon}}"></image>
+            <view>{{goodsItem.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+     </view>
+    </scroll-view>
+  </view>
+</view>
