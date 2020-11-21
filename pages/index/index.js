@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+import {request} from "../../request/request"
 
 Page({
 
@@ -8,14 +9,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    swiperList: [],  // 轮播图数据
+    navList: [],  // 导航栏数据
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getSwiperList();
+    this.getNavList();
+  },
+
+  // 获取轮播图
+  getSwiperList(){
+    request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
+    }).then(res => {
+      this.setData({
+        swiperList: res.data.message
+      })
+    })
+  },
+  // 获取导航栏数据
+  getNavList(){
+    request({
+      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
+    }).then(res => {
+      this.setData({
+        navList: res.data.message
+      })
+    })
   },
 
   /**

@@ -1,1 +1,15 @@
-<view>index</view>
+<view class="home">
+  <SearchInput></SearchInput>
+  <swiper class="swiperBox" circular="true" autoplay="true" indicator-dots="true" indicator-color="#bcbcbc" indicator-active-color="#f8554d">
+    <swiper-item wx:for="{{swiperList}}" wx:key="key">
+      <image class="swiperImg" mode="widthFix" src="{{item.image_src}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="navBox">
+    <view class="navItem" wx:for="{{navList}}" wx:key="key">
+      <view class="imgbox">
+        <image class="navImg" src="{{item.image_src}}" alt=""></image>
+      </view>
+    </view>
+  </view>
+</view>

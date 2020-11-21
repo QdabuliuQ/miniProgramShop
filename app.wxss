@@ -1,10 +1,11 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+@import './style/iconfont.wxss';
+page,view,text,image,swiper,swiper-item,navigator{
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-} 
+}
+/* 定义wxss全局变量 */
+page{
+  --themeColor: #f8554d;
+  font-size: 28rpx;
+}

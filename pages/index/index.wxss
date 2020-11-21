@@ -1,0 +1,31 @@
+view{
+  /* color: var(--themeColor); */
+}
+.swiperBox{
+  width: 100%;
+  /* height: 270rpx; */
+  height: calc(100vw * 145 / 320);
+}
+.swiperImg{
+  width: 100%;
+  height: 100%;
+}
+.navBox{
+  width: 100%;
+  height: 190rpx;
+  display: flex;
+}
+.navItem{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.imgbox{
+  width: 65%;
+  height: 70%;
+  margin: 0 auto;
+}
+.navImg{
+  width: 100%;
+  height: 100%;
+}
