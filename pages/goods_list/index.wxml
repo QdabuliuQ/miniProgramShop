@@ -1,2 +1,31 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<view class="goodsList">
+  <SearchInput></SearchInput>
+  <view class="tabs">
+    <Tabs bindtoggle="toggle" tabList="{{tabList}}"></Tabs>
+  </view>
+  <view class="goodsContent">
+    <navigator 
+    mode="navigator" 
+    class="goodsItem" 
+    wx:for="{{goodsList}}" 
+    wx:key="key"
+    url="/pages/goods_detail/index">
+      <view class="leftBox">
+        <image lazy-load='true' src="{{item.goods_small_logo?item.goods_small_logo:'https://wx3.sinaimg.cn/mw690/006DgWDkgy1gkycsdmmmdj30m80m8mzz.jpg'}}"></image>
+      </view>
+      <view class="rightBox">
+        <view class="text">
+          <view class="title">
+            {{item.goods_name}}
+          </view>
+          <view class="price">
+            ￥{{item.goods_price}}
+          </view>
+          <view class="detail">
+            <view class="count">剩余库存：{{item.goods_number}}</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

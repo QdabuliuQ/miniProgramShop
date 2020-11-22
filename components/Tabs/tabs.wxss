@@ -1,0 +1,23 @@
+.tabsBox{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  
+}
+.tabsItem{
+  flex: 1;
+  height: 100%;
+  line-height: 70rpx;
+  text-align: center;
+}
+.activeTab{
+  box-sizing: border-box;
+  border-bottom: 1.5px solid var(--themeColor);
+  color: var(--themeColor);
+}
+.tabsContent{
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  font-size: 26rpx;
+}

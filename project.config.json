@@ -62,6 +62,13 @@
         {
           "name": "分类页面开发",
           "pathName": "pages/category/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品列表页面开发",
+          "pathName": "pages/goods_list/index",
+          "query": "cid=3",
           "scene": null
         }
       ]

@@ -1,0 +1,12 @@
+
+<view class="tabsBox">
+  <view class="tabsItem" 
+  bindtap="toggleTab" 
+  wx:for="{{tabList}}" 
+  wx:key="key"
+  data-index="{{index}}">
+    <view class="tabsContent {{index === currentIndex ? 'activeTab' : ''}}" >
+      {{item}}
+    </view>
+  </view>
+</view>

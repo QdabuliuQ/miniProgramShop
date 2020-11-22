@@ -27,7 +27,7 @@ Page({
   // 获取轮播图
   getSwiperList(){
     request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
+      url: '/home/swiperdata'
     }).then(res => {
       this.setData({
         swiperList: res.data.message
@@ -37,7 +37,7 @@ Page({
   // 获取导航栏数据
   getNavList(){
     request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
+      url: '/home/catitems'
     }).then(res => {
       this.setData({
         navList: res.data.message
@@ -47,7 +47,7 @@ Page({
   // 获取楼层数据
   getFloorList(){
     request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
+      url: '/home/floordata'
     }).then(res => {
       this.setData({
         floorList: res.data.message
