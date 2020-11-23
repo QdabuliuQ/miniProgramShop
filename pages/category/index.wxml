@@ -30,7 +30,7 @@
           <navigator 
           class="goodsItem"
           mode="navigate"
-          url="/pages/goods_list/index?cid={{titleItem.cat_id}}"
+          url="/pages/goods_list/index?cid={{goodsItem.cat_id}}"
           wx:for="{{titleItem.children}}"
           wx:for-item="goodsItem"
           wx:for-key="goodsKey"

@@ -68,7 +68,13 @@
         {
           "name": "商品列表页面开发",
           "pathName": "pages/goods_list/index",
-          "query": "cid=3",
+          "query": "cid=5",
+          "scene": null
+        },
+        {
+          "name": "pages/goods_detail/index",
+          "pathName": "pages/goods_detail/index",
+          "query": "goods_id=43986",
           "scene": null
         }
       ]

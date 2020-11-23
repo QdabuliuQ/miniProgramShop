@@ -1,5 +1,5 @@
 <view class="goodsList">
-  <SearchInput></SearchInput>
+  <SearchInput class="searchBox"></SearchInput>
   <view class="tabs">
     <Tabs bindtoggle="toggle" tabList="{{tabList}}"></Tabs>
   </view>
@@ -9,7 +9,7 @@
     class="goodsItem" 
     wx:for="{{goodsList}}" 
     wx:key="key"
-    url="/pages/goods_detail/index">
+    url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
       <view class="leftBox">
         <image lazy-load='true' src="{{item.goods_small_logo?item.goods_small_logo:'https://wx3.sinaimg.cn/mw690/006DgWDkgy1gkycsdmmmdj30m80m8mzz.jpg'}}"></image>
       </view>

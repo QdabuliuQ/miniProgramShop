@@ -1,2 +1,47 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="goods_detail">
+  <swiper class="swiperBox" circular="true" autoplay="true" indicator-dots='true' indicator-dots="true" indicator-color="#bcbcbc" indicator-active-color="#f8554d">
+    <swiper-item wx:for="{{pics}}" wx:key="key">
+      <image mode="widthFix" src="{{item.pics_mid_url}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="topContent">
+    <view class="price">
+      ￥{{price}}
+    </view>
+    <view class="center">
+      <view class="name">{{name}}</view>
+      <view class="category">
+        <view class="icon" bindtap="toggleCategory">
+          <view class="iconfont {{isCates?'icon-shoucang-copy':'icon-shoucang'}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="goodsPic">
+    <view class="goodsAttrs">
+      <view class="Title">
+        商品参数
+      </view>
+      <view class="attrs">
+        <view class="table">
+          <view class="tr" wx:for="{{attrs}}" wx:key='key'>
+            <td class="td1">
+              <view class="text">{{item.attr_name}}</view>
+            </td>
+            <td class="td2">
+              <view class="text">
+                {{item.attr_value}}
+              </view>
+            </td>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="picBox">
+      <view class="Title">
+        图文详情
+      </view>
+      <rich-text nodes="{{goods_introduce}}"></rich-text>
+    </view>
+  </view>
+</view>
