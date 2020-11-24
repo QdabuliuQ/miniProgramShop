@@ -1,1 +1,82 @@
-/* pages/cart/index.wxss */
+.cart{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #eeeded;
+}
+.cartBox{
+  padding: 24rpx;
+}
+.bottomNav{
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  box-shadow: 0 -1px 1px rgba(141, 141, 141, 0.24);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.leftBox{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+.checkBox{
+  margin-left: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.iconBox{
+  float: left;
+  font-size: 38rpx;
+  color: #757575;
+}
+.icon-xuanzhong{
+  float: left;
+  font-size: 38rpx;
+  color: var(--themeColor);
+}
+.text{
+  float: left;
+  margin-left: 16rpx;
+  color: #5e5e5e;
+}
+.rightBox{
+  width: 75%;
+  height: 100%;
+  float: right;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 5%;
+}
+.buyBox{
+  position: absolute;
+  right: 0;
+  width: 65%;
+  height: 80%;
+  line-height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+.text1{
+  font-size: 35rpx;
+}
+.price{
+  font-size: 28rpx !important;
+  color: var(--themeColor);
+}
+.btnBuy{
+  width: 60%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  line-height: 80rpx;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 80rpx;
+}

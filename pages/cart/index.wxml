@@ -1,2 +1,21 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="cart">
+  <view class="cartBox">
+    <view class="cartItem" ></view>
+  </view>
+  <view class="bottomNav">
+    <view class="leftBox">
+      <view class="checkBox">
+        <view bindtap="toggleCheck" class="iconBox iconfont {{isCheck?'icon-xuanzhong':'icon-weixuanzhong'}} "></view>
+        <view class="text">全选</view>
+      </view>
+    </view>
+    <view class="rightBox">
+      <view class="buyBox">
+        <text class="text1">合计: </text><text class="price"> ￥0</text>
+        <view class="btnBuy">
+          结算
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
