@@ -1,9 +1,15 @@
 <view class="goods_detail">
+  <!-- 轮播图 -->
   <swiper class="swiperBox" circular="true" autoplay="true" indicator-dots='true' indicator-dots="true" indicator-color="#bcbcbc" indicator-active-color="#f8554d">
-    <swiper-item wx:for="{{pics}}" wx:key="key">
+    <swiper-item 
+    bindtap="previewImg"
+    data-index="{{index}}"
+    wx:for="{{pics}}" 
+    wx:key="key">
       <image mode="widthFix" src="{{item.pics_mid_url}}"></image>
     </swiper-item>
   </swiper>
+  <!-- 商品参数 -->
   <view class="topContent">
     <view class="price">
       ￥{{price}}
@@ -17,6 +23,7 @@
       </view>
     </view>
   </view>
+  <!-- 商品详细参数 -->
   <view class="goodsPic">
     <view class="goodsAttrs">
       <view class="Title">
@@ -42,6 +49,33 @@
         图文详情
       </view>
       <rich-text nodes="{{goods_introduce}}"></rich-text>
+    </view>
+  </view>
+  <!-- 底部导航栏 -->
+  <view class="boxBtn">
+    <view class="boxLeft">
+      <view class="leftItem">
+        <view class="icon1 iconBottom1 iconfont icon-dianpu"></view>
+        <view class="iconText">店铺</view>
+      </view>
+      <view class="leftItem">
+        <view class="icon1 iconBottom iconfont icon-kefu"></view>
+        <view class="iconText">客服</view>
+      </view>
+      <view class="leftItem">
+        <view  bindtap="toggleCategory" class="iconBottom iconfont {{isCates?'icon-shoucang-copy':'icon-shoucang'}} icon-shoucang2"></view>
+        <view class="iconText">收藏</view>
+      </view>
+    </view>
+    <view class="boxRight">
+      <view class="btnList">
+        <view class="shopCart" bindtap="addCart">
+          加入购物车
+        </view>
+        <view class="buy">
+          购买
+        </view>
+      </view>
     </view>
   </view>
 </view>
