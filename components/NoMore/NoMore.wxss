@@ -1,0 +1,18 @@
+@import '../../style/iconfont.wxss';
+.noGoodsBox{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  position: relative;
+  top: 300rpx;
+}
+.nogoods{
+  /* height: 100rpx; */
+  font-size: 200rpx;
+  color: #999898;
+}
+.textBox{
+  text-align: center;
+  font-size: 34rpx;
+  color: #999898;
+}

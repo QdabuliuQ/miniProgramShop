@@ -38,7 +38,7 @@ Page({
     }).then(res => {
       // map 方法遍历出符合要求的内容
       this.priviewImgList = res.data.message.pics.map( v => v.pics_mid)
-      this.GoodsDetail = res.data.message  // 保存商品id
+      this.GoodsDetail = res.data.message  // 保存商品信息
       this.setData({
         name: res.data.message.goods_name,
         price: res.data.message.goods_price,
@@ -82,6 +82,7 @@ Page({
     // 如果 缓存 中没有当前商品
     if (index===-1) {
       this.GoodsDetail.num = 1  // 创建num属性赋值为 1
+      this.GoodsDetail.checked = true  // 商品在购物车中是未选中状态
       cart.push(this.GoodsDetail)  // 添加进数组 cart 中
     // 如果缓存中已经有该商品了
     // 只需要数量 + 1

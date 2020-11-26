@@ -1,5 +1,6 @@
 
 // 封装 request 请求
+
 // params 参数必须是一个对象
 let ajaxTime = 0;  // 用于计算请求次数
 export const request = (params) => {
@@ -24,6 +25,23 @@ export const request = (params) => {
         ajaxTime --;
         if (ajaxTime === 0) {
           wx.hideLoading()  // 隐藏加载动画
+        }
+      }
+    })
+  })
+}
+
+// 封装模态框
+export const showModal = ({content}) => {
+  return new Promise((resolve, reject) => {
+    wx.showModal({
+      title: '提示',
+      content: content,
+      success (res) {
+        if (res.confirm) {
+          resolve(res)
+        } else if (res.cancel) {
+          
         }
       }
     })

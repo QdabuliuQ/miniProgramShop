@@ -1,7 +1,53 @@
 <view class="cart">
-  <view class="cartBox">
-    <view class="cartItem" ></view>
+  <view wx:if="{{isGetAddress}}" bindtap="getAddressBtn" hover-class="hoverBtn" hover-stay-time="200" class="address">
+    <view class="getAddressBtn">
+      <view class="iconfont dizhiIcon icon-dizhi"></view>
+      获取收货地址
+    </view>
   </view>
+  <view bindtap="getAddressBtn" hover-class="addressBtn" wx:else class="addressBox">
+    <view class="addressDetail">收货地址：{{userAddressDetail.provinceName}} {{userAddressDetail.cityName}}
+      {{userAddressDetail.countyName}}</view>
+    <view class="bottomDetail">
+      <view class="phone">手机号码：{{userAddressDetail.telNumber}}</view>
+      <view class="userName">收货人：{{userAddressDetail.userName}}</view>
+    </view>
+  </view>
+  <view wx:if="{{userGoodsDetail.length !== 0}}" class="cartBox">
+    <view class="item" wx:for="{{userGoodsDetail}}" wx:key="key">
+      <view class="cartItem">
+        <view
+        bindtap="isCheckGoods"
+        data-id="{{item.goods_id}}"  
+        class="goodsCheckBox">
+          <view class="goodsCheck iconfont {{item.checked?'icon-xuanzhong':'icon-weixuanzhong'}}"></view>
+        </view>
+        <view class="goodsImg">
+          <image src="{{item.goods_small_logo?item.goods_small_logo:'https://wx3.sinaimg.cn/mw690/006DgWDkgy1gkycsdmmmdj30m80m8mzz.jpg'}}">
+          </image>
+        </view>
+        <view class="goodsDetail">
+          <view class="goodsBox">
+            <view class="goodsName">
+              {{item.goods_name}}
+            </view>
+            <view class="cartItemPrice">
+              <view class="priceBox1">￥{{item.goods_price}}</view>
+              <view class="step">
+                <view bindtap="goodsCountSet" data-id="{{item.goods_id}}" data-operation="{{-1}}" class="reduce">-</view>
+                <view class="count">{{item.num}}</view>
+                <view bindtap="goodsCountSet" data-id="{{item.goods_id}}" data-operation="{{1}}" class="add">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cartBox" wx:else>
+    <NoMore></NoMore>
+  </view>
+  <!-- 结算导航 -->
   <view class="bottomNav">
     <view class="leftBox">
       <view class="checkBox">
@@ -9,12 +55,17 @@
         <view class="text">全选</view>
       </view>
     </view>
-    <view class="rightBox">
-      <view class="buyBox">
-        <text class="text1">合计: </text><text class="price"> ￥0</text>
-        <view class="btnBuy">
-          结算
+    <view class="centerBox">
+      <view class="priceNum">
+        <view class="priceBox">
+          <view class="priceDetail">合计 :<text class="priceTextSum">￥{{totalPrice}}</text></view>
+          <view class="priceText">包含运费</view>
         </view>
+      </view>
+    </view>
+    <view class="rightBox">
+      <view class="btnBuy">
+        结算({{totalCount}})
       </view>
     </view>
   </view>

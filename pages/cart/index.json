@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "NoMore": "../../components/NoMore/NoMore"
+  },
   "navigationBarTitleText": "购物车"
 }
