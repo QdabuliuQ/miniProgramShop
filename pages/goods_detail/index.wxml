@@ -25,11 +25,11 @@
   </view>
   <!-- 商品详细参数 -->
   <view class="goodsPic">
-    <view class="goodsAttrs">
+    <view class="goodsAttrs" wx:if="{{attrs.length !== 0}}">
       <view class="Title">
         商品参数
       </view>
-      <view class="attrs">
+      <view class="attrs" wx:if="{{attrs.length !== 0}}">
         <view class="table">
           <view class="tr" wx:for="{{attrs}}" wx:key='key'>
             <td class="td1">
@@ -44,7 +44,7 @@
         </view>
       </view>
     </view>
-    <view class="picBox">
+    <view class="picBox" wx:if="{{goods_introduce !== ''}}">
       <view class="Title">
         图文详情
       </view>

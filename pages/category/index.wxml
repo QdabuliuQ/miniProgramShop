@@ -30,6 +30,7 @@
           <navigator 
           class="goodsItem"
           mode="navigate"
+          hover-class="none"
           url="/pages/goods_list/index?cid={{goodsItem.cat_id}}"
           wx:for="{{titleItem.children}}"
           wx:for-item="goodsItem"

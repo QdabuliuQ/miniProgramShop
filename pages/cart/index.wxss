@@ -201,7 +201,8 @@
   border-radius: 80rpx;
 }
 .priceNum{
-  margin-top: 12rpx;
+  position: absolute;
+  right: 0;
 }
 .rightBox{
   flex: 3;
@@ -212,11 +213,15 @@
 }
 .centerBox{
   flex: 5;
-  text-align: right;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 .priceText{
   font-size: 24rpx;
   color: #a8a8a8;
+  text-align: right;
 }
 .priceBox1{
   color: var(--themeColor);

@@ -67,7 +67,12 @@ Page({
 
   // 页面显示生命周期函数
   onShow(){   
-    const userAddressDetail = wx.getStorageSync('address')  // 获取缓存中的地址数据
+    const userAddressDetail = wx.getStorageSync('address')||null  // 获取缓存中的地址数据
+    if (userAddressDetail !== null) {
+      this.setData({
+        isGetAddress: false
+      })
+    }
     const userGoodsDetail = wx.getStorageSync('cart')||[]  // 获取缓存中的购物车数据
     this.setData({
       userAddressDetail,

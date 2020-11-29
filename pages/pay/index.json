@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "NoMore": "../../components/NoMore/NoMore"
+  },
+  "navigationBarTitleText": "商品支付"
 }

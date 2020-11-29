@@ -1,1 +1,55 @@
-/* pages/auth/index.wxss */
+.authView{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.box{
+  width: 60%;
+  margin: 0 auto;
+}
+.imageBox{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+}
+.imageBox image{
+  width: 100%;
+  height: 100%;
+}
+.text{
+  margin-top: 20rpx;
+  font-size: 35rpx;
+  text-align: center;
+}
+.btnBox{
+  width: 100%;
+  height: 70rpx;
+  margin-top: 30rpx;
+}
+.ok{
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 30rpx;
+  background-color: rgb(43, 192, 30);
+  color: #fff;
+  float: left;
+}
+.no{
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 30rpx;
+  background-color: rgb(204, 204, 204);
+  color: #fff;
+  float: right;
+}
+.hover{
+  background-color: rgb(37, 161, 26);
+}
+.hover2{
+  background-color: rgb(180, 180, 180);
+}

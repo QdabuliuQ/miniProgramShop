@@ -64,9 +64,9 @@
       </view>
     </view>
     <view class="rightBox">
-      <view class="btnBuy">
+      <navigator open-type="navigate" url="/pages/pay/index" class="btnBuy">
         结算({{totalCount}})
-      </view>
+      </navigator>
     </view>
   </view>
 </view>

@@ -1,2 +1,14 @@
-<!--pages/auth/index.wxml-->
-<text>pages/auth/index.wxml</text>
+<view class="authView">
+  <view class="box">
+    <view class="imageBox">
+      <image src="https://wx2.sinaimg.cn/mw690/006DgWDkgy1gl66nee0qaj30e80e8gmd.jpg"></image>
+    </view>
+    <view class="text">
+      微云易购需要获取用户信息
+    </view>
+    <view class="btnBox">
+      <view class="ok" hover-class="hover">允许</view>
+      <view class="no" hover-class="hover2">拒绝</view>
+    </view>
+  </view>
+</view>

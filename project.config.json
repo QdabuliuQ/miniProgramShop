@@ -82,6 +82,17 @@
           "pathName": "pages/cart/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "支付页面开发",
+          "pathName": "pages/pay/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "授权页面",
+          "pathName": "pages/auth/index",
+          "scene": null
         }
       ]
     }

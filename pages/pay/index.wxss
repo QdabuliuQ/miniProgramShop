@@ -1,1 +1,193 @@
-/* pages/pay/index.wxss */
+.cart{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #eeeded;
+}
+.address{
+  padding: 10rpx 35rpx;
+  background-color: #fff;
+  font-size: 32rpx;
+}
+.hoverBtn{
+  background-color: rgb(238, 238, 238);
+}
+.addressBtn{
+  background-color: rgb(238, 238, 238);
+}
+.addressBox{
+  padding: 15rpx 40rpx;
+  background-color: #fff;
+}
+.addressDetail{
+  width: 100%;
+  height: 55rpx;
+  line-height: 55rpx;
+}
+.bottomDetail{
+  width: 100%;
+  height: 55rpx;
+  line-height: 55rpx;
+  display: flex;
+}
+.phone{
+  flex: 1;
+}
+.userName{
+  flex: 1;
+  text-align: right;
+}
+.dizhiIcon{
+  margin-right: 7px;
+  font-size: 48rpx;
+  color: var(--themeColor);
+}
+.getAddressBtn{
+  width: 60%;
+  height: 80rpx;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartBox{
+  padding:0 24rpx 24rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  min-height: calc(100vh - 100rpx - 20rpx - 100rpx);
+  margin-bottom: 100rpx;
+}
+.item{
+  position: relative;
+  top: 24rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 20rpx;
+}
+.cartItem{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  
+}
+.goodsCheckBox{
+  flex: 0.7;
+  display: flex;
+  align-items: center; 
+}
+.goodsCheck{
+  margin: 0 auto;
+  font-size: 37rpx;
+}
+.goodsImg{
+  flex: 2.7;
+  background-color: #fff;
+}
+.goodsImg image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.goodsDetail{
+  flex: 5;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.goodsName{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.cartItemPrice{
+  font-size: 34rpx;
+  
+  display: flex;
+}
+.step{
+  flex: 1;
+}
+
+.count{
+  padding:0 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  float: right;
+  color: #adaaaa;
+  font-size: 28rpx;
+}
+
+.bottomNav{
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  box-shadow: 0 -1px 1px rgba(141, 141, 141, 0.24);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+}
+.text{
+  float: left;
+  margin-left: 16rpx;
+  color: #5e5e5e;
+}
+.rightBox{
+  flex: 6;
+}
+.buyBox{
+  float: right;
+  width: 85%;
+  height: 80%;
+  margin-top: 2.5%;
+  margin-right: 5%;
+}
+.text1{
+  font-size: 35rpx;
+}
+.price{
+  font-size: 28rpx !important;
+  color: var(--themeColor);
+}
+.btnBuy{
+  width: 95%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 80rpx;
+}
+.priceNum{
+  position: absolute;
+  right: 0;
+}
+.rightBox{
+  flex: 3;
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.centerBox{
+  flex: 5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.priceText{
+  font-size: 24rpx;
+  color: #a8a8a8;
+  text-align: right;
+}
+.priceBox1{
+  color: var(--themeColor);
+}
+.priceTextSum{
+  font-size: 34rpx;
+  color: var(--themeColor);
+}

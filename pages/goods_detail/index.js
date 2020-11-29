@@ -36,6 +36,8 @@ Page({
         goods_id: this.data.goods_id
       }
     }).then(res => {
+      console.log(res);
+      
       // map 方法遍历出符合要求的内容
       this.priviewImgList = res.data.message.pics.map( v => v.pics_mid)
       this.GoodsDetail = res.data.message  // 保存商品信息
