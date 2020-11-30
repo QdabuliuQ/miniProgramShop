@@ -7,14 +7,17 @@
   </view>
   <view bindtap="getAddressBtn" hover-class="addressBtn" wx:else class="addressBox">
     <view class="addressDetail">收货地址：{{userAddressDetail.provinceName}} {{userAddressDetail.cityName}}
-      {{userAddressDetail.countyName}}</view>
+      {{userAddressDetail.countyName}} {{userAddressDetail.detailInfo}}</view>
     <view class="bottomDetail">
       <view class="phone">手机号码：{{userAddressDetail.telNumber}}</view>
       <view class="userName">收货人：{{userAddressDetail.userName}}</view>
     </view>
   </view>
   <view wx:if="{{userGoodsDetail.length !== 0}}" class="cartBox">
-    <view class="item" wx:for="{{userGoodsDetail}}" wx:key="key">
+    <navigator class="item" 
+    url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+    wx:for="{{userGoodsDetail}}" 
+    wx:key="key">
       <view class="cartItem">
         <view class="goodsImg">
           <image src="{{item.goods_small_logo?item.goods_small_logo:'https://wx3.sinaimg.cn/mw690/006DgWDkgy1gkycsdmmmdj30m80m8mzz.jpg'}}">
@@ -34,7 +37,7 @@
           </view>
         </view>
       </view>
-    </view>
+    </navigator>
   </view>
   <view class="cartBox" wx:else>
     <NoMore></NoMore>

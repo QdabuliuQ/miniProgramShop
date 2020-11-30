@@ -7,8 +7,8 @@
       微云易购需要获取用户信息
     </view>
     <view class="btnBox">
-      <view class="ok" hover-class="hover">允许</view>
-      <view class="no" hover-class="hover2">拒绝</view>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="ok" hover-class="hover">允许</button>
+      <button class="no" hover-class="hover2">拒绝</button>
     </view>
   </view>
 </view>

@@ -14,7 +14,11 @@
     </view>
   </view>
   <view wx:if="{{userGoodsDetail.length !== 0}}" class="cartBox">
-    <view class="item" wx:for="{{userGoodsDetail}}" wx:key="key">
+    <navigator class="item" 
+    hover-class="none"
+    wx:for="{{userGoodsDetail}}" 
+    wx:key="key"
+    url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
       <view class="cartItem">
         <view
         bindtap="isCheckGoods"
@@ -42,7 +46,7 @@
           </view>
         </view>
       </view>
-    </view>
+    </navigator>
   </view>
   <view class="cartBox" wx:else>
     <NoMore></NoMore>

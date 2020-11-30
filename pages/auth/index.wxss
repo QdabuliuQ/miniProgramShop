@@ -28,24 +28,28 @@
   margin-top: 30rpx;
 }
 .ok{
-  width: 45%;
+  padding: 14rpx !important;
+  width: 45% !important;
   height: 100%;
   text-align: center;
-  line-height: 70rpx;
   border-radius: 30rpx;
   background-color: rgb(43, 192, 30);
   color: #fff;
   float: left;
+  font-size: 30rpx;
+  font-weight: normal;
 }
 .no{
-  width: 45%;
+  padding: 14rpx !important;
+  width: 45% !important;
   height: 100%;
   text-align: center;
-  line-height: 70rpx;
   border-radius: 30rpx;
   background-color: rgb(204, 204, 204);
   color: #fff;
   float: right;
+  font-size: 30rpx;
+  font-weight: normal;
 }
 .hover{
   background-color: rgb(37, 161, 26);
