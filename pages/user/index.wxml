@@ -1,2 +1,81 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="user_warp">
+  <view wx:if="{{isUserDetail}}" class="user_top_box">
+    <view class="zzhe"></view>
+    <image class="user_bgimg" src="{{userInfo.avatarUrl}}"></image>
+    <view class="user_info_box">
+      <image class="user_image" src="{{userInfo.avatarUrl}}">
+      </image>
+      <view class="user_name">
+        {{userInfo.nickName}}
+      </view>
+    </view>
+  </view>
+  <view wx:else class="user_top_box">
+    <view class="noUser">
+      <view bindtap="toLogin" hover-class="user_login_btn_hover" class="user_login_btn">
+        登录
+      </view>
+    </view>
+  </view>
+  <view class="user_container">
+    <!-- 顶部导航栏 -->
+    <view class="user_container_topNav">
+      <view hover-class="topnav_item_hover" class="user_contaioner_items">
+        <view class="user_container_topNav_count">0</view>
+        <view class="user_container_topNav_text">收藏的店铺</view>
+      </view>
+      <view hover-class="topnav_item_hover" class="user_contaioner_items">
+        <view class="user_container_topNav_count">0</view>
+        <view class="user_container_topNav_text">收藏的商品</view>
+      </view>
+      <view hover-class="topnav_item_hover" class="user_contaioner_items">
+        <view class="user_container_topNav_count">0</view>
+        <view class="user_container_topNav_text">关注的商品</view>
+      </view>
+      <view hover-class="topnav_item_hover" class="user_contaioner_items">
+        <view class="user_container_topNav_count">0</view>
+        <view class="user_container_topNav_text">我的足迹</view>
+      </view>
+    </view>
+    <!-- 我的订单 -->
+    <view class="user_container_order">
+      <view class="user_container_order_title">我的订单</view>
+      <view class="user_container_order_menu">
+        <navigator url="/pages/order/index?type=1" hover-class="topnav_item_hover" class="order_menu_item">
+          <view class="order_menu_item_icon iconfont icon-order"></view>
+          <view class="order_menu_item_text">全部订单</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=2" hover-class="topnav_item_hover" class="order_menu_item">
+          <view class="order_menu_item_icon iconfont icon-daifukuan01"></view>
+          <view class="order_menu_item_text">待付款</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=3" hover-class="topnav_item_hover" class="order_menu_item">
+          <view class="order_menu_item_icon iconfont icon-daishouhuo"></view>
+          <view class="order_menu_item_text">待收货</view>
+        </navigator>
+        <navigator hover-class="topnav_item_hover" class="order_menu_item">
+          <view class="order_menu_item_icon iconfont icon-tuikuan"></view>
+          <view class="order_menu_item_text">退款/退货</view>
+        </navigator>
+      </view>
+    </view>
+    <view hover-class="topnav_item_hover" class="user_address_control user_menu_box">
+      收货地址管理
+    </view>
+
+    <view class="user_menu_list">
+      <view hover-class="topnav_item_hover" class="user_menu_box displayBox">
+        <view class="left_menu_box">联系客服</view>
+        <view class="right_menu_box"></view>
+      </view>
+      <view hover-class="topnav_item_hover" class="user_menu_box displayBox">
+        <view class="left_menu_box">意见反馈</view>
+        <view class="right_menu_box"></view>
+      </view>
+      <view hover-class="topnav_item_hover" class="user_menu_box displayBox">
+        <view class="left_menu_box">关于我们</view>
+        <view class="right_menu_box"></view>
+      </view>
+    </view>
+  </view>
+</view>

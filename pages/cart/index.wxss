@@ -99,6 +99,7 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin-bottom: 20rpx;
+  font-size: 32rpx;
 }
 .cartItemPrice{
   font-size: 34rpx;

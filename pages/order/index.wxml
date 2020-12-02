@@ -1,2 +1,3 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view class="order_search_view">
+  <tabs tabList="{{tabList}}"></tabs>
+</view>

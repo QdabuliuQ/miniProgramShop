@@ -1,4 +1,4 @@
 <view class="noGoodsBox">
-  <view class="iconfont nogoods icon-meiyoushuju"></view>
+  <view class="iconfont nogoods icon-meiyoudingdan"></view>
   <view class="textBox">没有更多啦</view>
 </view>
