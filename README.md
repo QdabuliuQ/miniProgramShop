@@ -108,7 +108,7 @@ this.setData({
 })
 ```
 
-#### 10、微信支付功能
+#### 7、微信支付功能
 * 一、获取用户的基本参数，通过给 BUTTON 组件的 open-type 属性设置为 getUserInfo ，并且同时设置 bindgetuserinfo 的回调函数。在 回调函数中的 事件对象（e）获取基本参数。用户请求 token
 ```js
 getUserInfo(e){
