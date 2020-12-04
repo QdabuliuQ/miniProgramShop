@@ -33,7 +33,7 @@
         <view class="user_container_topNav_text">关注的商品</view>
       </navigator>
       <navigator url="/pages/collect/index?index=3" hover-class="topnav_item_hover" class="user_contaioner_items">
-        <view class="user_container_topNav_count">0</view>
+        <view class="user_container_topNav_count">{{browse_count}}</view>
         <view class="user_container_topNav_text">我的足迹</view>
       </navigator>
     </view>

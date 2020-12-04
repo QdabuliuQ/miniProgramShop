@@ -78,4 +78,7 @@
       </view>
     </view>
   </view>
+  <navigator url="/pages/cart/index" open-type="switchTab" class="goods_fixed_box">
+    <view class="iconfont icon-gouwuche"></view>
+  </navigator>
 </view>

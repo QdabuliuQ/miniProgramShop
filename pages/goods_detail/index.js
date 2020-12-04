@@ -15,8 +15,7 @@ Page({
     isCates: false,  // 是否收藏商品
   },
   priviewImgList: [],  // 定义全局变量  存放大图预览数组
-  GoodsDetail: 0,  // 商品id
-
+  GoodsDetail: 0,  // 商品i
   /**
    * 生命周期函数--监听页面加载
    */
@@ -24,7 +23,6 @@ Page({
     this.setData({
       goods_id: options.goods_id  // 保存id
     })
-
     this.getGoodsDetail()
   },
 
@@ -52,6 +50,23 @@ Page({
         attrs: res.data.message.attrs,
         isCates: isCollect
       })
+      
+      // 添加浏览记录
+      let browseList = wx.getStorageSync('browse')||[]  // 获取浏览记录
+      // findIndex方法如果没有获取到匹配的条件则返回-1
+      let index = browseList.findIndex(v => v.goods_id === this.data.goods_id)  
+      // 判断index是否为 -1  如果为-1表示没有之前没有浏览过该商品
+      // 向数组中添加商品
+      if (index === -1) {
+        browseList.push({
+          goods_id: this.data.goods_id,
+          goods_name: this.data.name,
+          goods_price: this.data.price, 
+          goods_number: this.data.goods_number,
+          goods_small_logo: res.data.message.goods_small_logo
+        })
+        wx.setStorageSync('browse', browseList)
+      }
     })
   },
 
@@ -64,7 +79,8 @@ Page({
         goods_name: this.GoodsDetail.goods_name,
         goods_price: this.GoodsDetail.goods_price,
         goods_number: this.GoodsDetail.goods_number,
-        goods_small_logo: this.GoodsDetail.goods_small_logo
+        goods_small_logo: this.GoodsDetail.goods_small_logo,
+        goods_id: this.GoodsDetail.goods_id
       })
       wx.setStorageSync('collect', collectList)
     } else {

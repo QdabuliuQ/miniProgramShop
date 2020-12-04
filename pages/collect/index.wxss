@@ -17,7 +17,7 @@
   height: 230rpx;
   background-color: #fff;
   margin-bottom: 25rpx;
-  box-shadow: 0 2px 2px rgba(136, 136, 136, 0.384);
+  box-shadow: 0 2px 2px rgba(197, 197, 197, 0.384);
   border-radius: 16rpx;
   display: flex;
   align-items: center;
@@ -50,7 +50,6 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   font-size: 30rpx;
-  font-weight: 550;
 }
 .collect_goods_price{
   display: flex;

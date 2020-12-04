@@ -1,22 +1,24 @@
 <Tabs bindtoggle="toggle" class="collect_tabs" tabList="{{tabsList}}"></Tabs>
 <view class="collect_container">
-  <view class="collect_goods_item" wx:if="{{goodsList.length !== 0}}" wx:for="{{goodsList}}" wx:key="key">
-    <view class="collect_goods_container">
-      <view class="collect_goods_image">
-        <image src="{{item.goods_small_logo}}"></image>
-      </view>
-      <view class="collect_goods_detail">
-        <view class="goodsitemBox">
-          <view class="collect_goods_title">
-            {{item.goods_name}}
-          </view>
-          <view class="collect_goods_price">
-            <view class="price">￥{{item.goods_price}}</view>
-            <view class="num">现有库存：{{item.goods_number}}</view>
+  <view wx:if="{{goodsList.length !== 0}}">
+    <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" class="collect_goods_item" wx:for="{{goodsList}}" wx:key="key">
+      <view class="collect_goods_container">
+        <view class="collect_goods_image">
+          <image src="{{item.goods_small_logo}}"></image>
+        </view>
+        <view class="collect_goods_detail">
+          <view class="goodsitemBox">
+            <view class="collect_goods_title">
+              {{item.goods_name}}
+            </view>
+            <view class="collect_goods_price">
+              <view class="price">￥{{item.goods_price}}</view>
+              <view class="num">现有库存：{{item.goods_number}}</view>
+            </view>
           </view>
         </view>
       </view>
-    </view>
+    </navigator>
   </view>
-  <noMore></noMore>
+  <noMore wx:else></noMore>
 </view>

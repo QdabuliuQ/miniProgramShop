@@ -27,17 +27,17 @@
 * 商品收藏
 
 ### 项目要点
-#### 1、新建文件夹，分类文件。
+### 1、新建文件夹，分类文件。
 * components 文件夹放的是组件
 * request 文件夹放的是网络请求
 * lib 文件夹放的是第三方库
 * style 文件夹放的是公共样式
 * utils 文件夹放的是自己的库
 
-#### 2、管理字体图标
+### 2、管理字体图标
 * 百度搜索阿里图标库，选中图标后加入购物车，在购物车中添加进项目中，点击 FontClass 生成代码，复制在 全局 wxss 文件中，通过类的引用就可以使用图标了
 
-#### 3、初始化样式
+### 3、初始化样式
 * wxss 中是不支持通配符 * 来初始化样式的，所以只能通过手写标签来初始化样式
 ```css
 page,view,text,image,swiper,swiper-item,navigator{
@@ -54,7 +54,7 @@ page{
 }
 ```
 
-#### 4、本地储存
+### 4、本地储存
 * 在分类界面中由于 API 接口请求回来的数据较大。可以将请求回来的数据保存到本地当中，通过时间判断决定数据是否过期，重新发送请求或者使用本地旧数据
   * 在发送网络请求后，调用 wx API 方法将数据保存到本地
   * 通过 wx.setStorageSync( 'key', 'data' )，key 用于区分本地数据必须是唯一的
@@ -71,7 +71,7 @@ request({
   * 判断 Cates 是否为空，如果为空则发送请求
   * 不为空的情况下，判断当前的时间戳距离上一次发送请求的时间戳是否大于 1000 * 300 (5分钟)，如果大于 5分钟 则重新发送请求，否则使用本地数据
 
-#### 5、在全局中添加加载动画
+### 5、在全局中添加加载动画
 * 调用 wx.showLoading () 方法使用加载动画，使用 wx.hideLoading() 隐藏动画。
 * 可以在 request 网络请求方法中调用 动画，在 complete（不管请求发送成功或者失败都会执行） 函数中结束加载动画
 ```js
@@ -82,7 +82,7 @@ wx.showLoading({
 wx.hideLoading()  // 隐藏加载动画
 ```
 
-#### 6、购物车功能开发
+### 6、购物车功能开发
 * 进入页面后计算购物车商品总价 / 商品总数量，通过在 onShow 生命周期函数中去执行。
 * 使用 forEach 去遍历缓存中的购物车数组，if 判断当 v (循环项) 的 checked 属性为 true 的时候，计算商品的总价格和总数量，当有一个商品的 checked 属性不为 true 的时候，则 isCheck (全选框) 改为 false
 * forEach 不会对一个空数组进行遍历，所以在遍历后需要重新判断一下 购物车 数组的长度，并且设置 isCheck 为 false
@@ -111,7 +111,7 @@ this.setData({
 })
 ```
 
-#### 7、微信支付功能
+### 7、微信支付功能
 * 一、获取用户的基本参数，通过给 BUTTON 组件的 open-type 属性设置为 getUserInfo ，并且同时设置 bindgetuserinfo 的回调函数。在 回调函数中的 事件对象（e）获取基本参数。用户请求 token
 ```js
 getUserInfo(e){
@@ -164,10 +164,37 @@ wx.requestPayment({
 })
 ```
 
-#### 11、在 OnShow 生命周期函数中获取 url 中的参数
+### 8、在 OnShow 生命周期函数中获取 url 中的参数
 * 由于 OnShow 方法是没有包含 options 形参，可以通过微信小程序中的 页面栈 来获取url中的数据
+  * 页面栈相当于一个数组，数组中存放的时候每一次被浏览的页面。
+  * 在页面栈的数组最多可以存放10条数据。
+  * 当前所在的页面的元素默认都是页面栈数组的最后一个元素
 * 调用 getCurrentPages 方法，返回的是一个数组，里面存放的就是页面栈
 ```js
 let pages = getCurrentPages()
 ```
 * pages 数组中的最后一个元素就是当前正在显示的页面。通过里面的 options 属性获取 url 参数即可
+
+### 12、解决收藏页面导航栏切换问题
+* 从个人中心页面点击不同的导航栏按钮进入到收藏页面的时候，会根据 url 中的参数来决定显示哪一个 tab 栏下面的内容
+* 通过在 OnShow 生命周期函数中获取索引值，从而判断外部点击了哪一个选项按钮，并且在内部同时跳转的指定的内容
+* 例如：在点击我的足迹页面下的商品之后，退出商品页面后，tab 栏又会默认显示上一次点击进行的索引（收藏栏），就会执行 OnShow 中的代码，重新获取页面栈中传递的参数
+```js
+let pages = getCurrentPages();  // 获取页面栈数组
+let index = pages[pages.length - 1].options.index;  // 获取传递的参数
+let tabsList = this.data.tabsList
+// 遍历导航栏 全部设置为不选中
+tabsList.forEach(item => {
+item.active = false
+});
+// 设置点击项为选中
+tabsList[index].active = true
+this.setData({
+tabsList
+})
+this.goodsContainer(index)
+```
+#### 解决：在全局中添加一个全局变量，用来判断用户是否在进入收藏页面后切换的导航栏，在 OnShow 中进行取反，当用户点击了任何一个 tab 栏，就将 isToggleTab 变量修改为 true。这样在退出商品详情页面后，不会执行 OnShow 中的 获取页面栈 的相关代码。
+```js
+isToggleTab: false,
+```

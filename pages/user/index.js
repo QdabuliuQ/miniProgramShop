@@ -8,6 +8,7 @@ Page({
     userInfo: null,
     isUserDetail: false,
     collect_count: 0,  // 收藏商品数量
+    browse_count: 0,  // 浏览商品数量
   },
 
   /**
@@ -15,8 +16,10 @@ Page({
    */
   onLoad: function (options) {
     let collect_count = wx.getStorageSync('collect').length
+    let browse_count = wx.getStorageSync('browse').length
     this.setData({
-      collect_count
+      collect_count,
+      browse_count
     })
   },
 
