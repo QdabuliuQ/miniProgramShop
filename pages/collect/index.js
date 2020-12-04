@@ -5,7 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tabsList: [
+      {
+        text: '收藏店铺',
+        active: false
+      },
+      {
+        text: '收藏商品',
+        active: true
+      },
+      {
+        text: '关注商品',
+        active: false
+      },
+      {
+        text: '我的足迹',
+        active: false
+      },
+    ],
 
+    goodsList: [],  // 商品数组
   },
 
   /**
@@ -16,51 +35,56 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
+    let pages = getCurrentPages();  // 获取页面栈数组
+    let index = pages[pages.length - 1].options.index;  // 获取传递的参数
+    let tabsList = this.data.tabsList
+    // 遍历导航栏 全部设置为不选中
+    tabsList.forEach(item => {
+      item.active = false
+    });
+    // 设置点击项为选中
+    tabsList[index].active = true
+    this.setData({
+      tabsList
+    })
+    this.goodsContainer(index)
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  toggle(e){
+    let index = e.detail;  // 点击索引
+    this.goodsContainer(index.toString())
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  goodsContainer(index){
+    // switch 判断点击了哪个菜单
+    switch (index) {
+      case "0":
+        this.setData({
+          goodsList: []
+        })
+        break;
+      case "1":
+        let goodsList = wx.getStorageSync('collect')||[]
+        this.setData({
+          goodsList
+        })
+        break;
+      case "2":
+        this.setData({
+          goodsList: []
+        })
+        break;
+      case "3":
+        this.setData({
+          goodsList: []
+        })
+        break;
+      default:
+        break;
+    }
   }
 })

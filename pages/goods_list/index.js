@@ -6,7 +6,20 @@ Page({
   data: {
     cid: 0,  // 分类数据
     pagenum: 1,  // 商品分页
-    tabList: ['综合','销售','价格'],  // 导航栏标签
+    tabList: [
+      {
+        text: '综合',
+        active: true
+      },
+      {
+        text: '销售',
+        active: false
+      },
+      {
+        text: '价格',
+        active: false
+      }
+    ],  // 导航栏标签
     goodsList: [],  // 商品数据
     sumPages: 0,  // 总页数
   },

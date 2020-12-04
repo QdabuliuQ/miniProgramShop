@@ -18,7 +18,6 @@
 .tabsContent{
   /* width: 50%; */
   /* height: 100%; */
-  padding: 5rpx 4rpx;
   margin: 0 auto;
   font-size: 26rpx;
 }

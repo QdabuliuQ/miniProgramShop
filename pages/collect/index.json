@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "Tabs":"../../components/Tabs/tabs",
+    "noMore":"../../components/NoMore/NoMore"
+  },
+  "navigationBarTitleText": "我的详情"
 }

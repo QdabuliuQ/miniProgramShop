@@ -20,22 +20,22 @@
   <view class="user_container">
     <!-- 顶部导航栏 -->
     <view class="user_container_topNav">
-      <view hover-class="topnav_item_hover" class="user_contaioner_items">
+      <navigator url="/pages/collect/index?index=0" hover-class="topnav_item_hover" class="user_contaioner_items">
         <view class="user_container_topNav_count">0</view>
         <view class="user_container_topNav_text">收藏的店铺</view>
-      </view>
-      <view hover-class="topnav_item_hover" class="user_contaioner_items">
-        <view class="user_container_topNav_count">0</view>
+      </navigator>
+      <navigator url="/pages/collect/index?index=1" hover-class="topnav_item_hover" class="user_contaioner_items">
+        <view class="user_container_topNav_count">{{collect_count}}</view>
         <view class="user_container_topNav_text">收藏的商品</view>
-      </view>
-      <view hover-class="topnav_item_hover" class="user_contaioner_items">
+      </navigator>
+      <navigator url="/pages/collect/index?index=2" hover-class="topnav_item_hover" class="user_contaioner_items">
         <view class="user_container_topNav_count">0</view>
         <view class="user_container_topNav_text">关注的商品</view>
-      </view>
-      <view hover-class="topnav_item_hover" class="user_contaioner_items">
+      </navigator>
+      <navigator url="/pages/collect/index?index=3" hover-class="topnav_item_hover" class="user_contaioner_items">
         <view class="user_container_topNav_count">0</view>
         <view class="user_container_topNav_text">我的足迹</view>
-      </view>
+      </navigator>
     </view>
     <!-- 我的订单 -->
     <view class="user_container_order">
@@ -53,7 +53,7 @@
           <view class="order_menu_item_icon iconfont icon-daishouhuo"></view>
           <view class="order_menu_item_text">待收货</view>
         </navigator>
-        <navigator hover-class="topnav_item_hover" class="order_menu_item">
+        <navigator url="/pages/order/index?type=4" hover-class="topnav_item_hover" class="order_menu_item">
           <view class="order_menu_item_icon iconfont icon-tuikuan"></view>
           <view class="order_menu_item_text">退款/退货</view>
         </navigator>

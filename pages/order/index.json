@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "tabs": "../../components/Tabs/tabs"
+    "tabs": "../../components/Tabs/tabs",
+    "noMore": "../../components/NoMore/NoMore"
   },
   "navigationBarTitleText": "订单查询"
 }

@@ -6,14 +6,18 @@ Page({
    */
   data: {
     userInfo: null,
-    isUserDetail: false
+    isUserDetail: false,
+    collect_count: 0,  // 收藏商品数量
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let collect_count = wx.getStorageSync('collect').length
+    this.setData({
+      collect_count
+    })
   },
 
   /**

@@ -21,7 +21,7 @@
     url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
       <view class="cartItem">
         <view
-        bindtap="isCheckGoods"
+        catchtap="isCheckGoods"
         data-id="{{item.goods_id}}"  
         class="goodsCheckBox">
           <view class="goodsCheck iconfont {{item.checked?'icon-xuanzhong':'icon-weixuanzhong'}}"></view>
@@ -38,9 +38,9 @@
             <view class="cartItemPrice">
               <view class="priceBox1">￥{{item.goods_price}}</view>
               <view class="step">
-                <view bindtap="goodsCountSet" data-id="{{item.goods_id}}" data-operation="{{-1}}" class="reduce">-</view>
+                <view catchtap="goodsCountSet" data-id="{{item.goods_id}}" data-operation="{{-1}}" class="reduce">-</view>
                 <view class="count">{{item.num}}</view>
-                <view bindtap="goodsCountSet" data-id="{{item.goods_id}}" data-operation="{{1}}" class="add">+</view>
+                <view catchtap="goodsCountSet" data-id="{{item.goods_id}}" data-operation="{{1}}" class="add">+</view>
               </view>
             </view>
           </view>

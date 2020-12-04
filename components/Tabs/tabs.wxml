@@ -5,8 +5,8 @@
   wx:for="{{tabList}}" 
   wx:key="key"
   data-index="{{index}}">
-    <view class="tabsContent {{index === currentIndex ? 'activeTab' : ''}}" >
-      {{item}}
+    <view class="tabsContent {{item.active ? 'activeTab' : ''}}" >
+      {{item.text}}
     </view>
   </view>
 </view>

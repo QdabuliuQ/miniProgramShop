@@ -22,8 +22,14 @@ Component({
    */
   methods: {
     toggleTab(e){
+      let tabList = this.data.tabList
+      tabList.forEach(item => {
+        item.active = false
+      });
+      
+      tabList[e.currentTarget.dataset.index].active = true
       this.setData({
-        currentIndex: e.currentTarget.dataset.index
+        tabList
       })
       this.triggerEvent('toggle', e.currentTarget.dataset.index)  // 事件传递
     }

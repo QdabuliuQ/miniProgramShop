@@ -1,3 +1,49 @@
 <view class="order_search_view">
-  <tabs tabList="{{tabList}}"></tabs>
+  <tabs bindtoggle="toggle" class="order_tabs" tabList="{{tabList}}"></tabs>
+  <view wx:if="{{orders.length !== 0}}" class="goodsList">
+    <view class="goods_order_item" 
+    wx:for="{{orders}}"
+    wx:for-item="ordersItem"
+    wx:for-index="ordersItemkey"
+    wx:key="ordersItemkey">
+      <view class="goods_order_glist">
+        <navigator 
+        hover-class="none"
+        url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
+        class="item {{index < orders.length - 1 ? 'mbottom' : ''}}" 
+        wx:for="{{ordersItem.goods}}" 
+        wx:key="key">
+          <view class="goodsImage">
+            <image src="{{item.goods_small_logo}}"></image>
+          </view>
+          <view class="goodsdetail">
+            <view class="goodsdetailBox">
+              <view class="title">{{item.goods_name}}</view>
+              <view class="priceNum">
+                <view class="price">
+                ￥{{item.goods_price}}
+                </view> 
+                <view class="num">
+                 × {{item.goods_number}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="show_order_detail">
+        <view bindtap="toggle_order_detail" data-order_number="{{ordersItem.order_number}}" class="show_order_title" hover-class="hoverTitle">
+          <view class="show_order_title_text">显示订单详情
+            <view class="iconfont {{ordersItem.show_order_detail?'icon-xiangshang':'icon-xiangxia'}}"></view>
+          </view>
+        </view>
+        <view wx:if="{{ordersItem.show_order_detail}}" class="show_order_detail_container">
+          <view class="show_order_detail_count">订单商品数量：{{ordersItem.total_count}}</view>
+          <view class="show_order_detail_order">订单编号：{{ordersItem.order_number}}</view>
+          <view class="show_order_detail_price">订单总价格：{{ordersItem.order_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <noMore wx:else></noMore>
 </view>

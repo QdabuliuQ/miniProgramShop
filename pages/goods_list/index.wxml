@@ -11,7 +11,7 @@
     wx:key="key"
     url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
       <view class="leftBox">
-        <image lazy-load='true' src="{{item.goods_small_logo?item.goods_small_logo:'https://wx3.sinaimg.cn/mw690/006DgWDkgy1gkycsdmmmdj30m80m8mzz.jpg'}}"></image>
+        <image lazy-load='true' src="{{item.goods_small_logo?item.goods_small_logo:'https://wx1.sinaimg.cn/mw690/006DgWDkgy1glbt0qvneej30e80e8mxu.jpg'}}"></image>
       </view>
       <view class="rightBox">
         <view class="text">

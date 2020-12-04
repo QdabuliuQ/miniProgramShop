@@ -36,11 +36,11 @@ Page({
         goods_id: this.data.goods_id
       }
     }).then(res => {
-      console.log(res);
-      
       // map 方法遍历出符合要求的内容
       this.priviewImgList = res.data.message.pics.map( v => v.pics_mid)
       this.GoodsDetail = res.data.message  // 保存商品信息
+      let collect = wx.getStorageSync('collect')||[]  // 获取缓存中的收藏数组
+      let isCollect = collect.some(v => v.goods_id === this.GoodsDetail.goods_id)  // some方法当回调函数中有一个为true 整个some函数的返回值就 true
       this.setData({
         name: res.data.message.goods_name,
         price: res.data.message.goods_price,
@@ -50,12 +50,28 @@ Page({
         // 将 webp 修改为 jpg
         goods_introduce: res.data.message.goods_introduce.replace(/\.webp/g, '.jpg'), 
         attrs: res.data.message.attrs,
+        isCates: isCollect
       })
     })
   },
 
   // 收藏按钮
   toggleCategory(){
+    let isCates = this.data.isCates;  // 获取当前的isCates
+    let collectList = wx.getStorageSync('collect')||[]
+    if (!isCates) {
+      collectList.push({
+        goods_name: this.GoodsDetail.goods_name,
+        goods_price: this.GoodsDetail.goods_price,
+        goods_number: this.GoodsDetail.goods_number,
+        goods_small_logo: this.GoodsDetail.goods_small_logo
+      })
+      wx.setStorageSync('collect', collectList)
+    } else {
+      let index = collectList.findIndex(v => v.goods_id === this.GoodsDetail.goods_id)
+      collectList.splice(index, 1) // 删除商品
+      wx.setStorageSync('collect', collectList)  // 重新设置缓存
+    }
     this.setData({
       isCates: !this.data.isCates
     })
