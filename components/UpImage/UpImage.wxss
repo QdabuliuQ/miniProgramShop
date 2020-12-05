@@ -1,0 +1,17 @@
+.up_image_wrap{
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+}
+.up_image_wrap image{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+.clearIcon{
+  position: absolute;
+  top: -15rpx;
+  right: -15rpx;
+  background-color: #fff;
+  border-radius: 50%;
+}

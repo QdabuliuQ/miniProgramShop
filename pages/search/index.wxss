@@ -1,1 +1,71 @@
-/* pages/search/index.wxss */
+.searchView{
+  width: 100%;
+}
+.search_top_box{
+  padding: 20rpx 30rpx;
+  margin: auto;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.082);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  background-color: #fff;
+}
+.search_box{
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #dbdbdb;
+}
+.search_input{
+  flex: 8;
+  height: 80rpx;
+  box-sizing: border-box;
+  border-top-left-radius: 70rpx;
+  border-bottom-left-radius: 70rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.search_icon{
+  float: left;
+  margin-left: 9rpx;
+}
+.search_input input{
+  width: 88%;
+  height: 70rpx;
+  position: absolute;
+  right: 0;
+  line-height: 70rpx;
+}
+.search_clear{
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  border-radius: 70rpx;
+}
+.icon-qingchu{
+  color: #999999;
+}
+.iconhover{
+  color: #575757 !important;
+}
+.search_container{
+  margin-top: 114rpx;
+  width: 100%;
+  min-height: calc(100vh - 114rpx);
+  background-color: #f5f5f5;
+}
+.search_pad_container{
+  padding: 20rpx;
+}
+.search_item{
+  margin-bottom:1em;
+  padding: 25rpx;
+  border-radius: 16rpx;
+  background:#fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.082);
+}
+.search_item_hover{
+  background-color: #f5f5f5;
+}

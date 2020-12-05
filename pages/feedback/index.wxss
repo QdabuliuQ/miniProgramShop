@@ -1,1 +1,87 @@
-/* pages/feedback/index.wxss */
+.feedback_view{
+  width: 100%;
+}
+.feedback_box{
+  width: 100%;
+  min-height: calc(100vh - 70rpx);
+  background-color: #f5f5f5;
+}
+.feedback_container{
+  padding: 20rpx;
+}
+.feedback_tip{
+  width: 100%;
+  height: 140rpx;
+  margin-top: 30rpx;
+}
+.feedback_title{
+  font-size: 30rpx;
+  font-weight: 550;
+}
+.feedback_tip_item{
+  float: left;
+  padding: 10rpx 30rpx;
+  background-color: #fff;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.feedback_text_box{
+  margin-top: 30rpx;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.feedback_text_box_container{
+  padding: 25rpx;
+}
+.text_box{
+  width: 100%;
+  height: 350rpx;
+}
+.feedback_add_pic{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;  
+}
+.feedback_add_pic button{
+  padding: 0;
+  width: 100rpx !important;
+  height: 100rpx !important;
+  line-height: 95rpx;
+  text-align: center;
+  background-color: rgb(252, 252, 252);
+  box-shadow:0 0 2px rgba(0, 0, 0, 0.2);
+  font-size: 60rpx;
+  font-weight: 550;
+  color: #c4c4c4;
+  float: left;
+  margin: 0 !important;
+  margin-right: 25rpx;
+}
+.btnHover{
+  background-color: rgb(238, 238, 238) !important;
+}
+.submitBtn{
+  width: 200rpx;
+  height: 75rpx;
+  background-color: var(--themeColor);
+  color: #fff;
+  text-align: center;
+  line-height: 75rpx;
+  border-radius: 16rpx;
+  float: right;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+.submitHover{
+  background-color: #d14841;
+}
+.up_image_item{
+  margin-right: 25rpx;
+  margin-bottom: 10rpx;
+}
+.activeTip{
+  background-color: var(--themeColor);
+  color: #Fff;
+}

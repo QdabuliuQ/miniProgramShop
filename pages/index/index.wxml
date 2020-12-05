@@ -4,15 +4,18 @@
   <!-- 轮播图 -->
   <swiper class="swiperBox" circular="true" autoplay="true" indicator-dots="true" indicator-color="#bcbcbc" indicator-active-color="#f8554d">
     <swiper-item wx:for="{{swiperList}}" wx:key="key">
-      <image class="swiperImg" mode="widthFix" src="{{item.image_src}}"></image>
+      <navigator>
+        <image class="swiperImg" mode="widthFix" src="{{item.image_src}}"></image>
+      </navigator>
+      
     </swiper-item>
   </swiper>
   <!-- 导航栏 -->
   <view class="navBox">
     <view class="navItem" wx:for="{{navList}}" wx:key="key">
-      <view class="imgbox">
+      <navigator url="/pages/category/index" open-type="switchTab" class="imgbox">
         <image class="navImg" src="{{item.image_src}}" alt=""></image>
-      </view>
+      </navigator>
     </view>
   </view>
   <!-- 楼层 -->

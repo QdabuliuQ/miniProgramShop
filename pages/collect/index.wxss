@@ -39,7 +39,9 @@
   flex: 6;
   display: flex;
   align-items: center;
-
+}
+.goodsitemBox{
+  width: 100%;
 }
 .collect_goods_title{
   text-overflow: -o-ellipsis-lastline;

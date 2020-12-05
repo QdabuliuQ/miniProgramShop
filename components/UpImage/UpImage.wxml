@@ -1,0 +1,4 @@
+<view class="up_image_wrap">
+  <image src="{{src}}"></image>
+  <icon class="clearIcon" color="rgb(248, 87, 79)" type="clear"></icon>
+</view>

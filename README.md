@@ -198,3 +198,26 @@ this.goodsContainer(index)
 ```js
 isToggleTab: false,
 ```
+
+### 10、意见反馈页面中的图片上传功能
+* 通过点击按钮打开相册 / 照相机页面进行上传图片，可以调用小程序内置的 api （wx.chooseImage）来完成
+* 会将上传的图片保存到数组中并且返回
+```js
+wx.chooseImage({
+  count: 9,  // 最多上传数量
+  sizeType: ['original', 'compressed'],  // 图片格式：原图/压缩
+  sourceType: ['album', 'camera'],  // 来源：相册/照相机
+  success: (result) => {  // 成功回调
+    this.setData({
+      // 如果直接对 upImageList 进行赋值的话会覆盖上一次上传的图片
+      // 通过解构原来的数组 + 当前重新上传的数组 进行拼接
+      upImageList: [...this.data.upImageList, ...result.tempFilePaths]
+    })
+  }
+})
+```
+#### * 注意点：如果直接拿到 result 结果对 data 中的图片数组进行赋值的话，将会覆盖上一次上传的图片记录。
+#### * 解决：通过在赋值的时候，重新声明一个数组 [] 并且通过解构的方法重新解构之前保存的图片数据，加上当前重新上传的图片数据
+```js
+upImageList: [...this.data.upImageList, ...result.tempFilePaths]
+```

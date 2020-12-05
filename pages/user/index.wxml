@@ -62,16 +62,15 @@
     <view hover-class="topnav_item_hover" class="user_address_control user_menu_box">
       收货地址管理
     </view>
-
     <view class="user_menu_list">
       <view hover-class="topnav_item_hover" class="user_menu_box displayBox">
         <view class="left_menu_box">联系客服</view>
         <view class="right_menu_box"></view>
       </view>
-      <view hover-class="topnav_item_hover" class="user_menu_box displayBox">
+      <navigator url="/pages/feedback/index" hover-class="topnav_item_hover" class="user_menu_box displayBox">
         <view class="left_menu_box">意见反馈</view>
         <view class="right_menu_box"></view>
-      </view>
+      </navigator>
       <view hover-class="topnav_item_hover" class="user_menu_box displayBox">
         <view class="left_menu_box">关于我们</view>
         <view class="right_menu_box"></view>

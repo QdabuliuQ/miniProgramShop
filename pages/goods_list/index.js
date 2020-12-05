@@ -5,6 +5,7 @@ Page({
    */
   data: {
     cid: 0,  // 分类数据
+    query: "",  // 关键字
     pagenum: 1,  // 商品分页
     tabList: [
       {
@@ -29,11 +30,12 @@ Page({
    */
   onLoad: function (options) {
     // options 中可以获取 navigator 标签url中传递过来的参数
+    let cid = options.cid||""
+    let query = options.query||""
     this.setData({
-      cid: options.cid
+      cid,
+      query
     })
-    console.log(this.data.cid);
-    
     this.getGoodsList()
   },
   // 商品请求
@@ -41,6 +43,7 @@ Page({
     request({
       url: '/goods/search',
       data: {
+        query: this.data.query,
         cid: this.data.cid,
         pagenum: this.data.pagenum,
         pagesize: 20

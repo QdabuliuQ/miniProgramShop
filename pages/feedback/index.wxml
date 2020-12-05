@@ -1,2 +1,41 @@
-<!--pages/feedback/index.wxml-->
-<text>pages/feedback/index.wxml</text>
+<view class="feedback_view">
+  <Tabs tabList="{{tabList}}"></Tabs>
+  <view class="feedback_box">
+    <view class="feedback_container">
+      <view class="feedback_title">问题种类</view>
+      <view class="feedback_tip">
+        <view 
+        bindtap="toggleFeedbackTip"
+        data-index="{{index}}"
+        class="feedback_tip_item {{item.active?'activeTip':''}}" 
+        wx:for="{{feedback_tip_list}}" wx:key="*this">
+          {{item.text}}
+        </view>
+      </view>
+      <view class="feedback_text_box">
+        <view class="feedback_text_box_container">
+          <textarea 
+          class="text_box" 
+          focus="true" 
+          value="{{textareaValue}}"
+          bindinput="textInput" 
+          placeholder="请描述一下您遇到的问题"></textarea>
+          <view class="feedback_add_pic">
+            <button bindtap="addImage" hover-class="btnHover">+</button>
+            <view 
+            bindlongpress="handleLongPress"
+            data-index="{{index}}"
+            wx:for="{{upImageList}}" 
+            wx:key="*this" 
+            class="up_image_item">
+              <UpImage src="{{item}}"></UpImage>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view bindtap="submitText" hover-class="submitHover" class="submitBtn">
+        提交
+      </view>
+    </view>
+  </view>
+</view>
